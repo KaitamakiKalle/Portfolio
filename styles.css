@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+    background-color:  #396472;
+}
+header {
+  text-align: center;
+}
+p {
+  width: 80%;
+  font-size: 1.2rem;
+  
+}
+.container {
+ background-color: #5d8390;
+  margin: auto;
+  width: 70%;
+  /* text-align: center; */
+}
+section {
+    padding: 1rem;
+}
+
+.image {
+  width: 100%;
+}
+pre {
+  width: fit-content;
+  height: fit-content;
+}
+
+.testaus {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.backend-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  
+}
