@@ -14,17 +14,25 @@
             <h1>Ticorporate portfolio</h1>
             <h2>Kalle Kaitamäki</h2>
         </header>
-        
-        <section>
+        <h2 style="padding-bottom: 0%;">Lähtökohdat</h2>
+       
+          <h3 style="padding-top: 1%;">Roolit</h3>
             <p>Päärooliini projektissa oli Backend-kehittäjä</p>
             <p>Sivuroolini oli testaaja</p>
             <p>Myös muihin rooleihin liittyviä tehtäviä tuli projektin aikana tehtyä</p>
+            <h3>Tavoitteet</h3>
             <p>Projektin alussa jokainen määrittely oppimistavoitteet itselleen. Halusin kehittää backend-ohjelmointi taitojani ja opetella käyttämään siihen tarvittavia frameworkeja paremmin. Halusin myös oppia lisää tietoturvasta ja siitä miten backend-sovellus voidaan hostata eri ympäristöissä.</p>
        <p>Tavoitteeni oli myös oppia suunnittelemaan parempia relaatiotietokantoja ja kirjoittamaan niihin monimutkaisempia kyselyitä</p>
        <p>Frontend puolelta tavoitteenani oli kehittyä frontendin ja backendin yhdistämisessä toisiinsa.</p>
        <p>Viimeisenä halusin kehittää ryhmätyöskentely taitojani ja oppia scrum porsessin osana olemisesta.</p>
-        </section>
-        <section>
+<h3>Aiempi osaaminen</h3>
+       <p>Backend ohjelmoinnista minulla oli jonkin verran kokemusta käymieni kurssien osalta mutta laajempaa projektia/fullstack sovellusta en ollut tehnyt vielä missään.</p>
+       <p>Tietoturvan osalta käymilläni kurseilla oli mainittu joitain asioita mutta tässäkin laajemman projektin kokemus puuttui.</p>
+       <p>Tietokantojen osalta osaamistasoni oli suhteellisen hyvä jo lähtöönsä mutta näin isoa relaatiokantaa en ollut vielä suunnittellut.</p>
+       <p>Frontendistä angular joka valittiin projektiimme oli minulle lähes täysin uusi framework, mutta yleistä osaamista löytyi esimerkiksi svelte frameworkista.</p>
+       <p>Ryhmätyötaitoni olivat hyvät jo lähtöönsä aikasempien kurssien ja työelämässä opittujen taitojen takia mutta tästäkin puuttui kokemus pitkästä laajemmasta projektista.</p>
+       
+       
     <h2>Suunnittelu</h2>
     <p>Projektin alkuvaiheessa pidimme kahden viikon mittaisen design sprintin.</p>
     <p>Suunnittelmien tekeminen jatkui kuitenkin myös tämän jälkeen.</p>
@@ -34,64 +42,35 @@
     <p>Tietokannasta tehtiin ensin design sprintin/1. sprintin aikana erd-malli.</p>
     <img class="image" src="./img/erd-malli.png" alt="erd-malli">
 
-    <!-- <h3>Amazon web services</h3> -->
-    <p>Design sprintin aikana päätettiin käyttää aws:n palveluita sovelluksemme hostauksessa.</p>
-    <p>Aws:n luotu arkkitehtuuri</p>
-
-
     <!-- <h3>Backend</h3> -->
     <p>Backendiksi valittiin perinteinen rest arkkitehtuuria hyödyntävä api jolla tietokantaa sekä aws:n palveluita hallitaan.</p>
     <p>Backendin perusrunkona toimii express.js kirjasto.</p>
     <p>Normaalista poiketen valitsin typescriptin backendin rakentamiseen tavallisen javascriptin sijaan koska halusin oppia lisää tyypitetystä kielestä. Typescript myös vähentää yleisesti kehitysaikaisten virheiden määrää.</p>     
-        </section>
-        <section>
-            <h2>Tietokanta</h2>
+     <p>Laajemman sovelluksen suuunnittelu tuntui aluksi haastavalta mutta lopuksi sain kuitenkin aikaiseksi järkevän rakenteen.</p>  
+       <img style="width:10%;" src="./img/kansiorakenne.png" alt="kansiorakenne">
+            <h2>AWS</h2>
+        
+            <p>Lopullinen arkkitehtuuri muovautui vielä projektin aikana. Mallia yksinkertaistettiin huomattavasti ja esimerkiksi backendin ajamiseen valittiin ec2 sijasta elastic beanstalk sen helppokäyttöisyyden takia. Alla kuva arkkitehtuurista.</p>
+            <div class="smallimg">
+              <img src="./img/aws.png" alt="aws-arkkitehtuuri" class="smallimg">
+            </div>
+       
+            
+            <h3>Tietokannan luonti</h3>
+            <p>Sovelluksen tietokanta pyörii aws:n rds palvelussa. Tietokannan luominen aws:n päässä oli verrattain helppoa.</p>
             <p>Sovelluksemme tietokannaksi valittiin MariaDB. MariaDB valittiin MySQL:n sijasta koska sen suorituskyky on parempi ja koska MariaDB ei vaadi maksettua lisenssiä kaikkien ominaisuuksien käyttöön. </p>
             <p>Erd-mallin valmistuttua tehtiin sen perusteella er-malli mysqlworkbench työkalun avulla</p>
             <img class="image" src="./img/er-malli.png" alt="er-malli">
             <p>Kuten voidaan huomata er-malliin tehtiin lopulta pieniä muutoksia kehitystyön edetessä poiketen erd-mallista.</p>
+            <p>Mallista generoitiin luontilause joka ajettiin rds palvelussa pyörivään MariaDB tietokantaan.</p>
             <p>Kehitystyön aikana opin paljon uutta sql:stä ja tietokannan suunnittelusta. Huomasin myös miten tärkeää eri roolien kommunikointi keskenään on tietokannan suunnittelun kannalta. Tietokantaa joudutiinkin muuttamaan monesti esimerkiksi UI suunnitelmien muuttuessa.</p>
-                       
-            <h3>sql</h3>
-            <p>Sql kielestä opin myös paljon uusia asioita. Yksi näistä oli tietokannan eventit, eli tapahtumat joita ajetaan tiettyjen ehtojen (tässä tapauksessa kellonajan) perusteella. Eventit olivat tarpeellisia projektissa koska vanhentuneet toimeksiantoilmoitukset pitää piilottaa näkyvistä automaattisesti. Tätä varten loin eventin joka ajetaan joka päivä heti keskiyön jälkeen.</p>
-            <img src="./img/sqlevent.png" alt="sql-event">
-            <p>Asia mistä opin paljon lisää olivat proceduurit. Proceduurit olivat järkevä tapa toteuttaa tiettyjä toimenpiteitä kuten profiilin poistaminen koska siihen oli helppo lisätä transaktio. Proceduurin tekeminen selkeytti ja lyhensi myös backend koodia.</p>
-            <img src="./img/proceduuri.png" alt="proceduuri">
-            <p>Ja proceduurin käyttö backend koodissa profiili kontrollerissa.</p>
-            <pre>
-                <code class="language-typescript">
-  // Deletes profile by id
-  async deleteProfile(
-    _request: express.Request,
-    response: express.Response,
-    next: express.NextFunction,
-  ) {
-    try {
-      // Calls database procedure which deletes all profile data with given profile id.
-      // Procedure wrappes delete queries in transaction and rollbacks if anything fails.
-      const result = await queryDb('CALL deleteProfile(?);', [
-        _request.params.profileid,
-      ]);
+                
 
-      console.log(result);
-
-      response.status(200).json({
-        message: 'Deleted profile succesfully',
-        success: true,
-      });
-    } catch (error: unknown) {
-      next(error);
-    }
-  }                   
-
-                </code>
-            </pre>
-        </section>
-        <h2>Backend</h2>
-        <section>
-            <p>Sovelluksen bakcendiksi muodostui rest rajapinta joka on toteutettu Express.js frameworkin avulla.</p>
-            <p>Backendin arkkitehtuuri koostuu pääasiassa kontrollolereista ja routeista</p>
+            <h2>Ja nyt sitä koodia!</h2>
+            
+            <p>Backendin arkkitehtuuri koostuu pääasiassa kontrollolereista ja routereista. Alla esimerkkinä kontrolleri ja router josta löytyy toiminnot koulujen hakemiseen.</p>
             <div class="backend-grid">
+              <div class="code">
             <pre>
                 <code class="language-typescript">
 const schoolC = {
@@ -132,6 +111,8 @@ const schoolC = {
 };
                 </code>
             </pre>
+          </div>
+          <div class="code">
             <pre>
                 <code class="language-typescript">
 const schoolRouter = express.Router();
@@ -145,10 +126,350 @@ schoolRouter.get('/:name', schoolC.findByName);
 schoolRouter.get('/', schoolC.findAll);
                 </code>
             </pre>
+          </div>
         </div>
-        <div>
-            <p>Koska pyrin tekemään koodista mahdollisimman modulaarista, uudelleen käytettävää ja selkeää kirjoitin useita funktiota. Esimerkkinä funktio joka muuttaa pyynnön bodyssä tulevan päivitys datan sql lauseeksi ja mysql kirjaston vaatimiksi parametreiksi taulukkoon jotka korvaavat ? merkit sql lauseessa. Funktio on hyödyllinen esimerkiksi update lauseiden yhteydessä kun objektissa tuleva data pitää muuttaa sql muotoon.</p>
+    <p>Alla piilossa monimutkaisempi työilmoitusten hallintaan tehty kontrolleri. Valitsin tämän näytteeksi siksi koska siinä on hyvää mutta myös huonoa. Kontrollerista löytyy kaikki tarvittavat crud toiminnot ja koodi on pääosin selkeää. Parannettavaa olisi työilmoituksen tallentavassa funktiossa. Funktiossa pitäisi ensinnäkin tarkistaa löytyykö syötettyä kaupunkia tietokannastamme. Toiseksi päivämäärän käsittelyn olisi hyvin voinut tehdä funktioksi erilliseen tiedostoon jotta koodi olisi ollut selkeämpää.</p>
+        <details>
+          <summary>Koodi avautuu tästä</summary>
+          <div class="code">
+            <pre>
+              <code class="language-typescript">
+const joblistingC = {
+  // Return all job adverts from database
+  async findAll(
+    _request: express.Request,
+    response: express.Response,
+    next: express.NextFunction,
+  ) {
+    try {
+      const data = await queryDb('SELECT * FROM JobAdvert;', []);
+
+      console.log(data);
+
+      response.status(200).json(data);
+    } catch (error: unknown) {
+      next(error);
+    }
+  },
+  // Function to find job advert by id
+  async findById(
+    _request: express.Request,
+    response: express.Response,
+    next: express.NextFunction,
+  ) {
+    try {
+      const data = await queryDb(
+        'SELECT * FROM JobAdvert WHERE advertid = ?;',
+        [_request.params.advertid],
+      );
+
+      console.log(data);
+
+      response.status(200).json(data);
+    } catch (error: unknown) {
+      next(error);
+    }
+  },
+  // Function to insert new advert into database
+  async createAdvert(
+    _request: express.Request,
+    response: express.Response,
+    next: express.NextFunction,
+  ) {
+    try {
+      // Create unique id for advert
+      const advertid: string = uniqid();
+
+      // Create new date object
+      const date = new Date();
+
+      // Set date 6 months forward
+      date.setMonth(date.getMonth() + 6);
+
+      // Check that date is in correct format (YYYY-MM-DD)
+      if (!_request.body.validuntil.match(/^\d{4}-\d{2}-\d{2}$/)) {
+        throw new Error('Date is not in valid format. Should be YYYY-MM-DD.');
+      }
+
+      const userDate = new Date(_request.body.validuntil);
+      // Check that adverts expiration date is less than half year from now
+      const validuntil =
+        userDate > date
+          ? `${date.getFullYear()}-${
+              // If month is below 10 it is needed to place 0 before month number so it is in valid format
+              // Also getMonth start counting months from 0 (january) so it is needed to + 1 to get correct date
+              date.getMonth() + 1 > 9
+                ? date.getMonth() + 1
+                : '0' + (date.getMonth() + 1)
+            }-${
+              // If day is below 10 it is needed 0 before day number so it is in valid format
+              date.getDate() > 9 ? date.getDate() : '0' + date.getDate()
+            }`
+          : _request.body.validuntil;
+
+      // Contruct advert object containing all necessary data
+      const advertObj = {
+        advertid,
+        ..._request.body,
+        accepted: false,
+        isvalid: true,
+        validuntil,
+      };
+
+      // Validate jobadvert
+      const valid = jobadvertValidation(advertObj);
+
+      // If advert is not valid throw error
+      if (valid.valid && valid.jobadvert) {
+        const insert = queryDb(
+          'INSERT INTO JobAdvert VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+          Object.values(valid.jobadvert),
+        );
+
+        // Email text
+        const htmlText = `&lt;head&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h2&gt;Ilmoituksen tunniste: ${advertid}&lt;h2&gt;
+            &lt;h2&gt;${_request.body.jobtitle}&lt;/h2&gt;
+            &lt;p&gt;Etunimi: ${_request.body.firstname}&lt;/p&gt;
+            &lt;p&gt;Sukunimi: ${_request.body.familyname}&lt;/p&gt;
+            &lt;p&gt;Yritys: ${
+              _request.body.company === null ? '' : _request.body.company
+            }&lt;/p&gt;
+            &lt;p&gt; Alkamispäivä: ${
+              _request.body.startdate === null ? '' : _request.body.startdate
+            }&lt;/p&gt;
+            &lt;p&gt;Sähköposti: ${_request.body.email}&lt;/p&gt;
+            &lt;p&gt;Puhelinnumero: ${_request.body.phonenumber}&lt;/p&gt;
+            &lt;p&gt;Kuvaus: ${_request.body.description}&lt;/p&gt;
+            &lt;p&gt;Palkka: ${_request.body.salary}&lt;/p&gt;
+            &lt;p&gt;Paikkakunta: ${_request.body.city}&lt;/p&gt;
+            &lt;p&gt;Ilmoitus voimassa: ${validuntil}&lt;/p&gt;
+            &lt;h3&gt;Poista ilmoitus painamalla alla olevaa linkkiä&lt;/h3&gt;
+            &lt;a href="http://localhost:4200/jobadvert/delete/${advertid}"&gt;Poista ilmoitus&lt;/a&gt;
+            &lt;/body&gt;`;
+
+        // Send email to job adverts creator with link to update advert
+        // Currently sends email only to digimajakka email because aws SES access rights are limited
+        await ses.sendEmail(
+          'digimajakka.asiakaspalvelu@gmail.com',
+
+          'Kiitos luomastasi ilmoituksesta',
+          htmlText,
+        );
+
+        console.log(insert);
+
+        response.status(201).json({
+          message: 'Created advert successfully',
+          success: true,
+          advert: {
+            advertid,
+            ..._request.body,
+            validuntil,
+          },
+        });
+      } else {
+        // Create error object containing information which data received was incorrect
+        const errorMsg = {
+          message:
+            'Some received fields not valid, shows false at invalid fields',
+          phonenumber: valid.phonenumberValid,
+          email: valid.emailValid,
+          fieldtypes: valid.typeCheck,
+          startdate: valid.startdateValid,
+          expirationDate: valid.expirationDateValid,
+        };
+        throw new CustomError(JSON.stringify(errorMsg), 400);
+      }
+    } catch (error: unknown) {
+      next(error);
+    }
+  },
+  // Function to delete advert from database
+  async deleteAdvert(
+    _request: express.Request,
+    response: express.Response,
+    next: express.NextFunction,
+  ) {
+    try {
+      const result = await queryDb(
+        'DELETE FROM JobAdvert WHERE advertid = ?;',
+        [_request.params.advertid],
+      );
+
+      // Email text
+      const htmltext =
+        '&lt;h3&gt;Ilmoituksesi on poistettu palvelusta digimajakka&lt;/h3&gt;';
+
+      // Send email to given email adress
+      await ses.sendEmail(
+        'digimajakka.asiakaspalvelu@gmail.com',
+
+        'Ilmoituksen poisto',
+        htmltext,
+      );
+
+      console.log(result);
+
+      response.status(200).json({
+        success: true,
+        message: 'Deleted job advert successfully',
+      });
+    } catch (error: unknown) {
+      next(error);
+    }
+  },
+  // Function to update job advert
+  async updateAdvert(
+    _request: express.Request,
+    response: express.Response,
+    next: express.NextFunction,
+  ) {
+    try {
+      const {sql, sqlparams} = convertBodyToQueryFormat(
+        _request,
+        'JobAdvert',
+        'advertid',
+      );
+
+      const result = queryDb(sql, [...sqlparams, _request.params.advertid]);
+
+      console.log(result);
+
+      response.status(200).json({
+        success: true,
+        message: 'Updated advert successfully',
+      });
+    } catch (error: unknown) {
+      next(error);
+    }
+  },
+};
+              </code>
+            </pre>
+          </div>
+        </details>
+        <h3>Sql</h3>
+        <p>Sql kielestä opin myös uusia asioita. Yksi näistä oli tietokannan eventit, eli tapahtumat joita ajetaan esimerkiksi kellonajan perusteella. Eventeistä minulla ei ollut aiempaa kokemusta. Eventit olivat tarpeellisia projektissa koska vanhentuneet toimeksiantoilmoitukset pitää piilottaa näkyvistä automaattisesti. Tätä varten loin eventin joka ajetaan joka päivä heti keskiyön jälkeen.</p>
+        <div class="smallimg">
+          <img src="./img/sqlevent.png" alt="sql-event">
+        </div>
+       
+        
+        <p>Asia mistä opin paljon lisää olivat proceduurit. Proceduurit olivat järkevä tapa toteuttaa tiettyjä toimenpiteitä kuten profiilin poistaminen koska siihen oli helppo lisätä transaktio. Proceduurin tekeminen selkeytti ja lyhensi myös backend koodia.</p>
+        <div class="smallimg">
+          <img src="./img/proceduuri.png" alt="proceduuri">
+        </div>
+       
+        
+        <p>Proceduurin käyttö backend koodissa profiili kontrollerissa.</p>
+        <div class="code">
         <pre>
+            <code class="language-typescript">
+// Deletes profile by id
+async deleteProfile(
+_request: express.Request,
+response: express.Response,
+next: express.NextFunction,
+) {
+try {
+  // Calls database procedure which deletes all profile data with given profile id.
+  // Procedure wrappes delete queries in transaction and rollbacks if anything fails.
+  const result = await queryDb('CALL deleteProfile(?);', [
+    _request.params.profileid,
+  ]);
+
+  console.log(result);
+
+  response.status(200).json({
+    message: 'Deleted profile succesfully',
+    success: true,
+  });
+} catch (error: unknown) {
+  next(error);
+}
+}                   
+
+            </code>
+        </pre>
+        </div>
+      <p>Ylläolevan koodin queryDB funktio on oma tekemäni funktio jolla saadaan yhteys tietokantaan ja lähetettyä haluttu kysely siihen. Tietokantaan muodostetaan connection pool joka mahdollistaa samojen yhteyksien käytön uudestaan sen sijaan että ne suljettaisiin aina käytön jälkeen.</p>
+  
+      <details>
+    <summary>Koodi avautuu tästä</summary>
+      <div class="code">
+      <pre>
+          <code class="language-typescript">
+// Create mysql connection pool
+const pool: mysql.Pool = mysql.createPool({
+  connectionLimit: 1,
+  host: process.env.HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB,
+});
+
+// Type for database query return object field
+type ResultField = string | boolean | number;
+// Type for database query return object
+type DbResult = Record &lt;string, ResultField&gt;;
+
+/**
+ * Function to create connection and send query to database
+ * @param {string} query sql query
+ * @param {Array} parameters array of values that replaces "?" in sql query
+ * @return {Promise} promise with data returned from database
+ */
+const queryDb = async (query: string, parameters: unknown[]) => {
+  return new Promise<[DbResult]>((resolve, reject) => {
+    // Get pool connection
+    pool.getConnection(async (error, connection) => {
+      // If error throw error forward
+      if (error) {
+        throw error;
+      } else {
+        console.log('Db connection successfull');
+      }
+
+      // Send query to database with parameters
+      connection.query(query, parameters, (error: unknown, result) => {
+        // If error reject promise
+        if (error) {
+          reject(error);
+        } else {
+          // Check that query doesn't return undefined
+          // In case of undefined release connection and reject promise
+          if (typeof result === 'undefined') {
+            connection.release();
+            reject(new TypeError('Query returned undefined value'));
+          }
+
+          // Release connection after successfull query
+          connection.release();
+          // In case of successfull query resolve promise wiht result
+          resolve(result);
+        }
+      });
+    });
+  });
+};
+
+export default queryDb;
+
+          </code>
+        </pre>
+      </div>
+    </details>
+    <h3>Funktioita ja validointia</h3>
+      <div>
+            <p>Projektin aikana oli myös tarpeellista tehdä funktioita sekä middlewareja jotta koodia saatiin siistimmäksi ja modulaarisemmaksi.</p>
+           <p>Alla oleva funktio muuttaa minkäkokoisen objektin tahansa sql update lauseeksi ja sen parametreiksi mysql kirjaston mukaisella tavalla.</p> 
+           <details> 
+            <summary>Koodi avautuu tästä</summary>
+           <div class="code">
+            <pre>
             <code class="language-typescript">
 const convertBodyToQueryFormat = (
   request: express.Request,
@@ -186,135 +507,436 @@ const convertBodyToQueryFormat = (
   };
 };
             </code>
+          </pre>
+            </div>
+          </details>
+            <p>Alla oleva bodyChecker on middleware joka tarkistaa ettei vastaanotetun pyynnön bodyssä ole undefined tai null arvoja.</p>
+            <details>
+              <summary>Koodi avautuu tästä</summary>
+            <div class="code">
+              <pre>
+                <code class="language-typescript">
+const bodyChecker = (
+  _request: express.Request,
+  _response: express.Response,
+  next: express.NextFunction,
+) => {
+  try {
+    const values = Object.values(_request.body);
+
+    if (
+      values.includes(undefined) ||
+      values.includes(null) ||
+      values.includes('undefined') ||
+      values.includes('null')
+    ) {
+      throw new Error('Undefined or null values in body');
+    } else {
+      next();
+    }
+  } catch (error: unknown) {
+    next(error);
+  }
+};
+
+                </code>
+              </pre>
+
+            </div>
+          </details>
+        </div>
+        <p>Datan validointi oli myös tärkeässä osassa sovelluksen toimivuuden ja tietoturvan kannalta. Kehityksen aikana tässä auttoivat typescriptin tyypit. Koska typescript käännetään javascriptiksi ennen kuin se voidaan suorittaa täytyi myös TS:n tyyppien lisäksi tehdä validoinnit perinteisellä javascriptillä esimerkiksi tietokannan insert lauseiden yhteydessä.</p>
+        <p>Validoinnistakin opin paljon uutta ja varsinkin siitä kuinka tärkeää se on laajemman mittakaavan sovelluksessa. Monet sattuneista virheistä johtuivatkin juuri validoinnin puutteesta.</p>'
+        <p>Validoinnissa minulla on myös vielä kehitettävää tarkkuudessa. Sovelluksemme kaatui loppuesityksessä ja osasyynä siihen oli se ettei paikkakunnan nimeä toimeksiantoilmoituksessa tarkistettu onko kyseinen paikkakunta olemassa tietokannassamme. Olemalla tarkempi ja kunnollisilla testeillä tämäkin virhe oltaisiin voitu välttää.</p>
+        <p>Validoinnissa käytettiin muunmuassa factory functioita jotka filtteröivät ei toivotut tiedot pois objectista. Alla esimerkki toimeksiantoilmoituksen factorystä.</p>
+      <details>
+        <summary>Koodi avautuu tästä</summary>
+        <div class="code">
+        <pre>
+            <code class="language-typescript">
+// Factory function is used to make sure there are no unwanted fields in object which contains new advert.
+// Factory function also places default values into object keys if no value is given.
+const jobadvertFactor = ({
+  advertid = '',
+  firstname = '',
+  familyname = '',
+  company = null,
+  startdate = null,
+  email = 'esimerkki@sahkoposti.com',
+  phonenumber = '000-0000-0000',
+  jobtitle = '',
+  description = '',
+  salary = '',
+  validuntil = '0000-00-00',
+  isvalid = true,
+  accepted = false,
+  city = '',
+}: Jobadvert): Jobadvert => ({
+  advertid,
+  firstname,
+  familyname,
+  company,
+  startdate,
+  email,
+  phonenumber,
+  jobtitle,
+  description,
+  salary,
+  validuntil,
+  isvalid,
+  accepted,
+  city,
+});
+
+            </code>
         </pre>
         </div>
-        
-            <h3>typescript</h3>
+      </details>
+        <p>Tyypit tarkistetaan myös javascriptillä virheiden välttämiseksi ja tietoturvan takia. Sitä varten luotiin yksinkertaisia funktioita tarkistusta varten.</p>
+        <details>
+          <summary>Koodi avautuu tästä</summary>
+        <div class="code">
+        <pre>
+      <code class="language-typescript">
+export const userTypeChecker = (user: User) => {
+  if (
+    typeof user.email !== 'string' ||
+    typeof user.admin !== 'boolean' ||
+    typeof user.schoolname !== 'number'
+  ) {
+    return false;
+  }
 
-            
-        </section>
-        <section>
-            <h2>AWS</h2>
-            <p>Projektin alussa päätettiin että palvelumme infrastruktuuri rakennetaan aws pilvipalvelujen päälle. Aws:n palvelut olivat minulle oikeastaan pelkästään pintaraapaisulta entuudestaan tuttuja joten infrastruktuurin rakentamiseen ja palveluiden käyttämiseen liittyi paljon uuden opettelua.</p>
-            <h3>palvelut ja arkkitehtuuri</h3>
-            <p>Lopullinen arkkitehtuuri muodostui vasta projektin loppuvaiheilla. Mallia yksinkertaistettiin huomattavasti ja esimerkiksi backendin ajamiseen valittiin ec2 sijasta elastic beanstalk sen helppokäyttöisyyden takia. Alla kuva arkkitehtuurista.</p>
-            <img src="./img/aws.png" alt="aws-arkkitehtuuri">
-            <h4>rds</h4>
-            
-
-
-            <h4>cognito</h4>
-            <p>Sovelluksen käyttäjätilien hallintaan valittiin aws:n palvelu cognito. Valmis palvelu oli järkevää valita sen sijasta että käyttäjätilejä tallennettaisiin itse tietokantaa koska valmis palvelu on tietoturvallisempi ja esimerkiksi salasanojen encryptauksesta ei tarvitse itse huolehtia.</p>
-            <p>Cognito palvelu pystytettiin aws:n konsolissa ja sille luotiin iam käyttäjä jonka kautta palvelua voidaan käyttää koodissa.</p>
-            <p>Alla on luokka joka sisältää sovelluksessamme tarvittavat metodit käyttäjien hallintaan.</p>
-            <pre>
-                <code class="language-typescript">
-
-koodia tähän
-
-                </code>
-            </pre>
-            <h4>s3</h4>
-            <p>Sovellus käyttää kahta S3 buckettia. Sovelluksen frontend tarjoillaan toisesta bucketista ja toinen bucketti on profiilikuvien tallennusta varten.</p>
-            <pre>
-                <code class="language-typescript">
-                    
-                    
-                    // Create new instance of s3
-                    const s3 = new S3({
-                      region: process.env.REGION,
-                      accessKeyId: process.env.AWS_BUCKET_ACCESS_KEY,
-                      secretAccessKey: process.env.AWS_BUCKET_SECRET_ACCESS_KEY,
-                    });
-                    
-                    const imageHelper = {
-                      /**
-                       * Function that uploads image ot s3 bucket
-                       * @param {Express.Multer.File} file file that multer has saved
-                       * @return {S3.ManagedUpload.SendData} object which contains information of saved image
-                       */
-                      async uploadImg(file: Express.Multer.File) {
-                        // Create filestream to read saved file
-                        const fileStream = fs.createReadStream(file.path);
-                        // Use upload method to upload filer to s3
-                        // code try catch structure here
-                        const result = await s3
-                          .upload({
-                            Bucket: process.env.AWS_BUCKET ?? '',
-                            Body: fileStream,
-                            Key: file.filename ?? '',
-                          })
-                          .promise();
-                        // Delete image from servers local folder after upload
-                        fs.unlink(process.cwd() + '/src/images/' + file.filename, (error) => {
-                          if (error) {
-                            console.error(error);
-                            throw new Error('Error when deleting image');
-                          }
-                        });
-                    
-                        return result;
-                      },
-                      /**
-                       * Function that downloads image from s3 bucket
-                       * @param {string} key S3 objects key that stores image
-                       * @return {PromiseResult	&lt;S3.GetObjectOutput, AWSError&gt;} image
-                       */
-                      async getImg(key: string) {
-                        try {
-                          // Define download parameters
-                          const downloadParams = {
-                            Key: key,
-                            Bucket: process.env.AWS_BUCKET || '',
-                          };
-                    
-                          // Check that object with specified key exists
-                          // Throws error if it does not
-                          await s3.headObject(downloadParams).promise();
-                    
-                          // Use getObject method to feth image and return it as promise
-                          const data = await s3.getObject(downloadParams).promise();
-                    
-                          if (typeof data.Body !== 'undefined') {
-                            return data.Body;
-                          } else {
-                            throw new Error('No image found');
-                          }
-                        } catch (error: unknown) {
-                          return null;
-                        }
-                      },
-                    };
-                    
-                    export default imageHelper;
-                    
-                </code>
-            </pre>
-            <h4>ses</h4>
-            <h4>elastic beanstalk</h4>
-            
-        </section>    
-        <h2>frontend</h2>
-        <section>
-            <div>
-            <p>Pääsin myös toteuttamaan jonkin verran frontend kehitystä projektin aikana.</p>
-            <p>Olin tarpeen mukaan frontend-kehittäjien tukena kun backendin toiminnallisuuksia yhdistettiin frontendiin.</p>
-            <p>Projektin loppuvaiheessa pääsin myös tekemään sovellukseemme etusivun ja ohjesivut angular frameworkilla.</p>
-            <p>Korjasin myös satunnaisia bugeja joita ilmennyt esimerkiksi käyttäjätestauksen myötä.</p>
-            <p>Frontend kehityksessä minulla on vielä selkeästi kehittymisen varaa koskaolen opinnoissani suuntaunut pääasiassa backend puolelle.</p>
+  return true;
+};
+      </code>
+    </pre>
         </div>
+      </details>
+         
 
-        </section>
+            
+        
+            
+  
+<h3>AWS palvelut koodiin</h3>
+<p>Kun Tietokanta oli luotu ja backendiin luotu perustoiminnallisuudet sen käsittelyyn alettiin rakentamaan aws:n palveluita.</p>
+<p>En ennen tätä projektia ollut juurikaan pystyttätyn saati käyttänyt aws:n palveluita joten tässäkin kohtaa aikaa meni paljon opetteluun, tutoriaaleihin ja kokeiluun.</p>
+<p>Aws:n palveluita pystyy käyttämään aws-sdk kirjaston avulla. Cognito palvelun käyttöön on olemassa myös oma amazon-cognito-identity-js kirjasto. Kumpaakin on käytetty projektissa ja molemmat olivat esimerkkejä niistä kirjastoista jotka olivat minulle entuudestaan täysin vieraita. Opetteluun meni paljon aikaa mutta onnistuin kuitenkin ottamaan niiden käytön hyvin haltuun projektimme vaatimien palveluiden osalta.</p>
+<p>Sovellus käyttää myös kahta S3 buckettia. Sovelluksen frontend tarjoillaan toisesta bucketista ja toinen bucketti on profiilikuvien tallennusta varten.</p>
+           
+<p>Sovellus käyttää simple email service palvelua sähköpostien lähettämiseen. Sähköposteja lähetetään toimeksiantajille heidän julkaistessaan ilmotuksia ja opiskelijoille käyttäjätilin vahvistukseen sekä salasanan nollauksen yhteydessä.</p>
+
+            <p>Sovelluksen käyttäjätilien hallintaan valittiin aws:n palvelu cognito. Valmis palvelu oli järkevää valita sen sijasta että käyttäjätilejä tallennettaisiin itse tietokantaa koska valmis palvelu on tietoturvallisempi ja esimerkiksi salasanojen encryptauksesta ei tarvitse itse huolehtia.</p>
+            <p>Kaikki palvelut pystytettiin aws:n konsolissa ja niille luotiin iam käyttäjät joiden kautta palveluita voidaan käyttää koodissa.</p>
+            <p>Alla on esimerkkinä luokka joka sisältää sovelluksessamme tarvittavat metodit käyttäjien hallintaan.</p>
+            <p>Myös kaikkien muiden palveluiden (S3, SES) hallinta on toteutettu vastaavien luokkien avulla.</p>
+           
+            <details>
+              <summary>Koodi avautuu tästä</summary>
+            <div class="code">
+            <pre>
+                <code class="language-typescript">
+
+/**
+ * Class for using cognito services
+ */
+class CognitoHelper {
+  public userPool: CognitoUserPool;
+  public cognitoIdentity: CognitoIdentityServiceProvider;
+
+  /**
+   * Constructor function. Creates new cognitoUserPool and CognitoIdentityServiceProvider to use in classes methods.
+   */
+  constructor() {
+    this.userPool = new CognitoUserPool({
+      UserPoolId: process.env.USER_POOL_ID ?? '',
+      ClientId: process.env.CLIENT_ID ?? '',
+    });
+    this.cognitoIdentity = new CognitoIdentityServiceProvider({
+      accessKeyId: process.env.COGNITO_ACCESS_KEY,
+      secretAccessKey: process.env.COGNITO_SECRET_KEY,
+      region: process.env.REGION,
+    });
+  }
+
+  /**
+   * Method that signs new user to cognito and database
+   * @param {string} email users email
+   * @param {string} password users password
+   * @return {Promise} resolved promise
+   */
+  async signUp(email: string, password: string) {
+    return new Promise((resolve, reject) => {
+      const attributeList: CognitoUserAttribute[] = [
+        new CognitoUserAttribute({
+          Name: 'email',
+          Value: email,
+        }),
+      ];
+
+      // Signup user to cognito
+      this.userPool.signUp(
+        email,
+        password,
+        attributeList,
+        [],
+        (error, result) => {
+          if (error) {
+            reject(error);
+          }
+
+          // If signup was succesfull return username
+          resolve(result?.user.getUsername());
+        },
+      );
+    });
+  }
+
+  /**
+   * Method that confirms user registration with code that cognito sent via email
+   * @param {string} email users email
+   * @param {string} code users confirmation code received via email
+   * @return {Promise} resolved promise
+   */
+  async confirmSignUp(email: string, code: string) {
+    // Create new instance of CognitoUser
+    return new Promise((resolve, reject) => {
+      const cognitoUser = new CognitoUser({
+        Username: email,
+        Pool: this.userPool,
+      });
+
+      // Use cognitoUser class method to verify confirmation code
+      cognitoUser.confirmRegistration(code, true, (error, result) => {
+        if (error) {
+          reject(error);
+        }
+
+        resolve(JSON.stringify(result));
+      });
+    });
+  }
+
+  /**
+   * Method to resend confirmation code to user
+   * @param {string} email users email
+   * @return {promise} resolved promise
+   */
+  async resendConfirmCode(email: string) {
+    // Create new instance of CognitoUser
+
+    return new Promise((resolve, reject) => {
+      const cognitoUser = new CognitoUser({
+        Username: email,
+        Pool: this.userPool,
+      });
+
+      // Use class method to resend confirmation code
+      cognitoUser.resendConfirmationCode((error, result) => {
+        if (error) {
+          reject(error);
+        }
+
+        resolve(JSON.stringify(result));
+      });
+    });
+  }
+
+  /**
+   * Method to sign user in
+   * @param {string} email users registered email
+   * @param {string} password users password
+   * @return {Promise} resolved promise
+   */
+  async signIn(email: string, password: string) {
+    return new Promise((resolve, reject) => {
+      const cognitoUser = new CognitoUser({
+        Username: email,
+        Pool: this.userPool,
+      });
+
+      const authenticationDetails = new AuthenticationDetails({
+        Username: email,
+        Password: password,
+      });
+
+      this.cognitoIdentity.adminGetUser(
+        {
+          UserPoolId: process.env.USER_POOL_ID || '',
+          Username: email || '',
+        },
+        (error) => {
+          if (error) reject(error); // an error occurred
+        },
+      );
+
+      cognitoUser.authenticateUser(authenticationDetails, {
+        // If sign in was success check if user has confirmed their account with code
+        onSuccess(session, userConfirmationNecessary) {
+          if (userConfirmationNecessary) {
+            resolve({userConfirmationNecessary});
+          }
+
+          // In case of everything is ok send token of signed in user forward
+
+          resolve({
+            accessToken: session.getAccessToken().getJwtToken(),
+          });
+        },
+        onFailure(error) {
+          reject(error);
+        },
+      });
+    });
+  }
+
+  /**
+   * Method that signs user out
+   * @param {string} email users email
+   * @return {Promise} resolved promise
+   */
+  async signOut(email: string) {
+    return new Promise((resolve) => {
+      const cognitoUser = new CognitoUser({
+        Username: email,
+        Pool: this.userPool,
+      });
+
+      cognitoUser.signOut(() => {
+        resolve('Signed out successfully');
+      });
+    });
+  }
+
+  /**
+   * Method to for authenticated user to delete their account/data from cognito and database
+   * @param {string} email users email
+   * @param {string} password users password fro authentication
+   * @return {Promise} promise
+   */
+  async deleteUser(email: string, password: string) {
+    return new Promise((resolve, reject) => {
+      // Create new instance of cognitoUser
+      const cognitoUser = new CognitoUser({
+        Username: email,
+        Pool: this.userPool,
+      });
+      // Details for authentication
+      const authenticationDetails = new AuthenticationDetails({
+        Username: email,
+        Password: password,
+      });
+
+      // Try to authenticate user
+      cognitoUser.authenticateUser(authenticationDetails, {
+        // If sign in was success check if user has confirmed their account with code
+        onSuccess(_session, userConfirmationNecessary) {
+          if (userConfirmationNecessary) {
+            resolve({userConfirmationNecessary});
+          }
+
+          // On successfull login delete user
+          cognitoUser.deleteUser((error, result) => {
+            if (error) {
+              reject(error);
+            }
+
+            console.log(result);
+
+            resolve(result);
+          });
+        },
+        onFailure(error) {
+          reject(error);
+        },
+      });
+    });
+  }
+
+  /**
+   * Method to start password reset workflow. This will send email with confirmation code to user
+   * @param {string} email users email
+   * @return {Promise} promise
+   */
+  async resetPassword(email: string) {
+    return new Promise((resolve, reject) => {
+      const cognitoUser = new CognitoUser({
+        Username: email,
+        Pool: this.userPool,
+      });
+
+      this.cognitoIdentity.adminGetUser(
+        {
+          UserPoolId: process.env.USER_POOL_ID || '',
+          Username: email || '',
+        },
+        (error) => {
+          if (error) reject(error); // an error occurred
+        },
+      );
+
+      cognitoUser.forgotPassword({
+        onSuccess: function (result) {
+          console.log('call result: ' + result);
+          resolve(result);
+        },
+        onFailure: function (error) {
+          reject(error);
+        },
+      });
+    });
+  }
+
+  /**
+   * Method to complete password reset request
+   * @param {string} email users email
+   * @param {string} confirmationCode password reset confirmation code received via email
+   * @param {string} newPassword new password provided by user
+   * @return {promise} promise
+   */
+  async confirmPassword(
+    email: string,
+    confirmationCode: string,
+    newPassword: string,
+  ) {
+    return new Promise((resolve, reject) => {
+      const cognitoUser = new CognitoUser({
+        Username: email,
+        Pool: this.userPool,
+      });
+      cognitoUser.confirmPassword(confirmationCode, newPassword, {
+        onFailure(error) {
+          reject(error);
+        },
+        onSuccess() {
+          resolve('Password reset success');
+        },
+      });
+    });
+  }
+}
+
+
+
+                </code>
+            </pre>
+            </div>
+            
+          </details>
+        
         <h2>testaus</h2>
-        <section class="testaus">
+     <div class="backend-grid">
             <div>
-                <p>Kuten aiemmin mainittiin, sivuroolini oli testaaja. Projektin alussa kirjoitettiin testaussuunnitelma joka sisälsi muunmuassa eri testaustyypit ja ohjeet dokumentaatioon.</p>
-                <p>Tehtävänäni oli pääasiassa backend-sovelluksen testaus. Testausta toteutin lähinnä tekemällä yksikkötestejä. Yksikkötestit toteutettiin mocha & chai sekä supertest kirjastojen avulla.</p>
+                <p>Sivuroolini projektissa oli testaaja. Projektin alussa kirjoitettiin testaussuunnitelma joka sisälsi muunmuassa eri testaustyypit ja ohjeet dokumentaatioon.</p>
+                <p>Projektissamme oli kaksi testaajaa ja minun tehtävänäni oli pääasiassa backend-sovelluksen testaus. Testausta toteutin lähinnä tekemällä yksikkötestejä. Yksikkötestit toteutettiin mocha & chai sekä supertest kirjastojen avulla.</p>
                 <p>Tein myös zenhubiin bugit osion joka toimi projektin bug trackerinä. Ohjeet bugien ilmoittamiseen laadittiin testaussuunnitelmaan.</p>
                 <p>Projektin alussa tiesin lähinnä testauksen käsitteistöä ja osasin kirjoittaa hyvin yksinkertaisia testejä mocha & chai kirjastoilla. Vaikka testaus projektissa jäi lopuksi vähemmälle kuin olisin toivonut, oli se silti opettavainen kokemus ja varsinkin minulle uusi supertest kirjasto osoittautui hyödylliseksi.</p>
-                <p>Testausta olisi ehdottomasti pitänyt toteuttaa enemmän projektin aikana ja se onkin yksi asioista minkä tekisin toisin jos saisin aloittaa projektin alusta.</p>
+                <p>Myönnän että testaus projektissamme ei toteutunut toivotulla tavalla. Testausta olisi ehdottomasti pitänyt toteuttaa enemmän projektin aikana ja se onkin yksi asioista minkä tekisin toisin jos saisin aloittaa projektin alusta.</p>
             </div>
+       
            
+            <div class="code">
             <pre>
                 <code class="language-javascript">
     it('Insert profile', (done) => {
@@ -367,14 +989,36 @@ koodia tähän
 
                 </code>
             </pre>
-        </section>  
-        <section>
-            <h2>Tapahtumat</h2>
-        </section> 
-        <section>
+            </div>
+      
+        </div>
+        <h2>Muuta</h2>
+      
+        <h3>Frontend</h3>
+            <div>
+            <p>Pääsin myös toteuttamaan jonkin verran frontend kehitystä projektin aikana.</p>
+            <p>Olin tarpeen mukaan frontend-kehittäjien tukena kun backendin toiminnallisuuksia yhdistettiin frontendiin.</p>
+            <p>Projektin loppuvaiheessa pääsin myös tekemään sovellukseemme ohjesivut ja osan etusivusta angular frameworkilla.</p>
+            <p>Korjasin myös satunnaisia bugeja joita ilmeni esimerkiksi käyttäjätestauksen myötä.</p>
+            <p>Frontend kehityksessä minulla on vielä selkeästi kehittymisen varaa koska olen opinnoissani suuntaunut pääasiassa backend puolelle.</p>
+            <p>Ohjesivu sovelluksessamme</p>
+            <img src="./img/ohjesivu.png" alt="ohjesivu">
+          </div>
+
+          <h3>Git ja github</h3>
+          <p>Gitin ja githubin käyttö oli minulle pääosin vierasta ennen projektia mutta projektin aikana opin käyttämään hyvin niiden perustoimintoja. </p>
+     
             <h2>Tavoitteiden saavuttaminen</h2>
+            <p>Saavutin mielestäni asettamani tavoitteet hyvin. Opin paljon uutta backend ohjelmoinnista ja varsinkin pilvipalvelujen hyödyntämisestä siinä. Opin myös tietoturvasta ja sen toteuttamisesta sekä esimerkiksi gdpr:n asettamista vaatimuksista. Pääsin myös tutustumaan frontend kehitykseen ja forntend sovelluksen yhdistämisestä backendiin. Sql kielestä opin uutta ja syvensin aiempaa osaamista paljon. Myös tietokannan suunnittelusta ja varsinkin suunnittelun tärkeydestä opin huomattavasti.</p>
+            <p>Ryhmätyötaitoni kehittyivät projektin aikana koska työskentely vaati hyvin paljon kommunikointia muiden ryhmäläisten kanssa. Tässä auttoi myös projektissa käytetty scrum metodi jonka käytöstä opin myös paljon.</p>
+            
             <h2>Missä voisin/haluaisin vielä kehittyä</h2>
-        </section> 
+            <p>Virheenkäsittelyssä olisi vielä parantamisen varaa. Vaikka virheenkäsittely oli sovelluksessa pääosin hyvää jäi joitain asioita tekemättä tai ne oli tehty huonosti. Tästä esimerkkinä, toimeksiantoilmoitusta lisättäessä olisi myös backendin päässä pitänyt tarkastaa onko kaupunkia johon ilmoitus yritetään tehdä olemassa. Myös esimerkiksi käyttäjän koulunvaihto toiminnallisuuden virheenkäsittelyssä olisi parantamisen varaa koska nykymuodossaan virheensattuessa vaaditaan todennäköisesti yhteydenotto asiakaspalveluun.</p>
+            <p>Koodin siisteyttä olisi myös voinut parantaa. Koodiin jäi joitakin vanhoja käyttämättömiä osia jotka olisi voinut poistaa sen selkeyttämiseksi.</p>
+            <p>Kommunikaatio eri ryhmäläisten ja roolien välillä on kehityskohde myös itselläni. Vaikka ryhmämme toimi pääasiassa hyvin luotimme liikaa toisiimme ja sen takia sattui paljon ylimääräisiä virheitä. Minun olisi myös teknisenä ihmisenä pitänyt osallistua heti alusta pitäen taskien määrittelyyn.</p>
+            <h2>Työnäkymät</h2>
+            <p>Ticorporate vahvisti kiinnostustani backend kehitykseen entisestään. Projekti toi myös uuden mielenkiinnon kohteen eli pilvipalvelut ja niiden hyödyntäminen backend kehityksessä. Aioinkin näillä näkymin jatkaa urapolkuani backend-koodarina sekä pilvipalveluiden kehittäjänä</p>
+        
         </div>
         <script src="./prism.js"></script>
 </body>
