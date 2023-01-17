@@ -47,7 +47,7 @@
     <p>Backendin perusrunkona toimii express.js kirjasto.</p>
     <p>Normaalista poiketen valitsin typescriptin backendin rakentamiseen tavallisen javascriptin sijaan, koska halusin oppia lisää tyypitetystä kielestä. Typescript myös vähentää yleisesti kehitysaikaisten virheiden määrää.</p>     
      <p>Laajemman sovelluksen suuunnittelu tuntui aluksi haastavalta, mutta lopuksi sain kuitenkin aikaiseksi järkevän rakenteen.</p>  
-       <img style="width:10%;" src="./img/kansiorakenne.png" alt="kansiorakenne">
+       <img style="width:30%;" src="./img/kansiorakenne.png" alt="kansiorakenne">
             <h2>AWS</h2>
         
             <p>Lopullinen arkkitehtuuri muovautui vielä projektin aikana. Mallia yksinkertaistettiin huomattavasti ja esimerkiksi backendin ajamiseen valittiin ec2:n sijasta elastic beanstalk sen helppokäyttöisyyden takia. Alla kuva arkkitehtuurista.</p>
@@ -646,7 +646,7 @@ class CognitoHelper {
   public cognitoIdentity: CognitoIdentityServiceProvider;
 
   /**
-   * Constructor function. Creates new cognitoUserPool and CognitoIdentityServiceProvider to use in classes methods.
+   * Constructor function. Creates new cognitoUserPool and CognitoIdentityServiceProvider.
    */
   constructor() {
     this.userPool = new CognitoUserPool({

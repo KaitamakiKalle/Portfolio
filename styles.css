@@ -12,7 +12,7 @@ img{
 }
 .smallimg{
   display: block;
-  width: 60%;
+  width: 65%;
   margin: auto;
 border-radius: 10px;
 }
@@ -96,4 +96,61 @@ details{
   font-size: 1.2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.code, pre, code {
+  max-width: 100%;
+}
+
+@media (max-width: 1600px){
+  .code, pre, code{
+
+    font-size: 0.9rem;
+  }
+  details{
+    margin-left: 12rem;
+  }
+  p, summary{
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1400px){
+  .code, pre, code{
+
+    font-size: 0.9rem;
+  }
+  .backend-grid{
+    display: flex;
+    flex-direction: column;
+
+  }
+  details{
+    margin-left: 10rem;
+  }
+}
+@media (max-width: 1350px){
+  .code, pre, code{
+
+    font-size: 0.8rem;
+  }
+  details{
+    margin-left: 6rem;
+  }
+}
+@media (max-width: 1150px){
+  .code, pre, code{
+
+    font-size: 0.8rem;
+  }
+  details{
+    margin-left: 3rem;
+  }
+}
+@media (max-width: 1080px){
+  .code, pre, code{
+
+    font-size: 0.75rem;
+  }
+  details{
+    margin-left: 2rem;
+  }
 }
