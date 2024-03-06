@@ -1,1 +1,1 @@
-Ticorporate projektin henkilökohtainen portfolio
+Henkilökohtainen portfolio
