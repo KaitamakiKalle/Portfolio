@@ -75,6 +75,8 @@
         </div>
 
  <p>Profiili reitin kontrolleri</p>
+        <div class="code"> 
+            <pre>
  <code class="language-typescript">
     import type express from 'express';
 import queryDb from '../db-connection';
@@ -295,8 +297,12 @@ const profileController = {
 };
 export default profileController;
  </code>
+      </pre>
+      </div>
+          
  <p>Profiili kontrollerissa käytetty funktio joka muuttaa http pyynnön mukana tulevan bodyn datan SQL kyselyksi. Funktio tarvittiin koska haluttiin että frontendistä ei tarvinnut lähettää kaikkia profiilin kenttiä tietoja päivittäessä backendille.</p>
-           
+<div class="code"> 
+            <pre>           
  <code class="language-typescript">
     /* eslint-disable @typescript-eslint/comma-dangle */
 import type express from 'express';
@@ -405,8 +411,11 @@ export const authHandler = async (
 
 export default convertBodyToQueryFormat;
  </code>
+            </pre>
+</div>
  <p>Syötteitä validoitiin projektissa esimerkiksi factory functioiden avulla.</p>
-
+<div class="code"> 
+            <pre>
  <code class="language-typescript">
     // Factory function is used to make sure there are no unwanted fields in object which contains new advert.
 // Factory function also places default values into object keys if no value is given.
@@ -442,6 +451,8 @@ const jobadvertFactor = ({
   city,
 });
  </code>
+            </pre>
+</div>
  
  <h2>Tietokannat</h2>
             <p>Tietokannoista minulta löytyy osaamista SQL kielestä sekä MongoDB:stä.</p>
@@ -459,6 +470,8 @@ const jobadvertFactor = ({
        
             
         <p>MongoDB:stä esimerkkinä backend 1 kurssin lopputyöstä otettua koodia jossa käytetty mongoose kirjastoa.</p>
+          <div class="code"> 
+            <pre>
             <code class="language-javascript">
                 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
@@ -507,6 +520,10 @@ const Car = new Schema({
 const model = mongoose.model('Car', Car);
 module.exports = model;
             </code>
+            </pre>
+          </div>
+          <div class="code"> 
+            <pre>
             <code class="language-javascript">const Car = require('../models/Car');
                 const User = require('../models/User');
                 
@@ -746,7 +763,8 @@ module.exports = model;
                       });
                     });
                 };</code>
-
+            </pre>
+          </div>
             <p>Backendin arkkitehtuuri koostuu pääasiassa kontrollolereista ja routereista. Alla esimerkkinä kontrolleri ja router, josta löytyy toiminnot koulujen hakemiseen.</p>
             
             <h2>AWS</h2>
@@ -755,6 +773,8 @@ module.exports = model;
                 <img src="./img/aws.png" alt="aws-arkkitehtuuri" class="smallimg">
               </div>
               <p>Koodista aws palveluihin saatiin yhteys aws-sdk kirjaston avulla. Esimerkkinä käyttäjänhallintaa varten toteutettu luokka.</p>
+          <div class="code"> 
+            <pre>
               <code class="language-typescript">import process from 'node:process';
                 import dotenv from 'dotenv';
                 import {CognitoIdentityServiceProvider} from 'aws-sdk';
@@ -1041,10 +1061,14 @@ module.exports = model;
                 }
                 
                 export default CognitoHelper;</code>
+            </pre>
+          </div>
 
                 <h2>Tekoäly/koneoppiminen</h2>
                 <p>Olen käynyt kursseja tekoälyn kehittämiseen liittyen ja esimerkiksi tähän olen valinnut tekemäni lopputyön. Kyseessä on tensorflow.js kirjastolla toeteutettu neuroverkko joka tunnistaa kuvasta onko ihmisellä kasvomaski naamalla vai ei.</p>
-            <code class="language-javascript">const tf = require('@tensorflow/tfjs-node');
+          <div class="code"> 
+            <pre> 
+          <code class="language-javascript">const tf = require('@tensorflow/tfjs-node');
                 const fs = require('fs');
                 const path = require('path');
                 // Funktio saa parametrina kansion osoitteen jossa kuvat ovat ja labelin joka kyseisille kuville annetaan
@@ -1313,7 +1337,8 @@ module.exports = model;
                 }
                 
                 run();</code>
-            
+            </pre>
+          </div>
 
         </div>
         <script src="./prism.js"></script>
