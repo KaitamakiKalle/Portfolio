@@ -175,7 +175,8 @@ const profileController = {
 
         // Insert placeholder data to users profile
         const insertedProfile = await queryDb(
-          'INSERT INTO UserProfile (firstname, familyname, phonenumber, aboutme, lookingfor, studyfield, yearofstudy, public, picturelink, email, City_name, UserAccount_email, UserAccount_School_name) 
+          'INSERT INTO UserProfile (firstname, familyname, phonenumber, aboutme, lookingfor, studyfield, yearofstudy, 
+          public, picturelink, email, City_name, UserAccount_email, UserAccount_School_name) 
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
           Object.values(profile),
         );
