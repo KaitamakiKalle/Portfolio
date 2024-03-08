@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" type="text/css" href="prism.css" />
 </head>
 
 <body>
@@ -253,7 +254,7 @@
             export default profileController;</code></pre>
 
         <h4>Profiili reitti</h4>
-        <pre><code>
+        <pre><code class="language-typescript">
             import express from 'express';
 import profileC from '../controllers/profile-controller';
 import bodyChecker from '../middlewares/body-check';
@@ -301,7 +302,7 @@ export = profileRouter;
         </code></pre>
 
         <h4>Käyttäjänhallintaa varten tehty luokka. Rakennettu AWS:n cognito palvelun päälle</h4>
-        <pre><code>
+        <pre><code class="language-typescript">
             /* eslint-disable require-jsdoc */
 /* eslint-disable valid-jsdoc */
 /* eslint-disable arrow-parens */
@@ -657,7 +658,7 @@ export const authHandler = async (
 };
 </code></pre>
 <h4>Funktioita syötteiden validointia varten</h4>
-<pre><code>
+<pre><code class="language-typescript">
     /* eslint-disable valid-jsdoc */
 /* eslint-disable operator-linebreak */
 
@@ -713,16 +714,16 @@ export const validateDate = (date: string) => {
 </code></pre>
 
 <h4>AWS luotu arkkitehtuuri sovellusta varten</h4>
-<pre><img src="./img/aws.png" alt="aws-arkkitehtuuri"></pre>
+<pre><img src="./aws.png" alt="aws-arkkitehtuuri"></pre>
 
 <h4>Tietokannan er-malli</h4>
-<img src="./img/er-malli.png" alt="er-malli">
+<img src="./er-malli.png" alt="er-malli">
 
 <h4>Esimerkki tietokantaan luoduista proceduureista ja eventeistä</h4>
 <h5>Proceduuri käyttäjän poistoa varten</h5>
-<img src="./img/proceduuri.png" alt="proceduuri">
+<img src="./proceduuri.png" alt="proceduuri">
 <h5>Event vanhojen työilmoitusten piilottamiseksi</h5>
-<img src="./img/sqlevent.png" alt="sql-event">
+<img src="./sqlevent.png" alt="sql-event">
 
 
       </div>
@@ -730,7 +731,7 @@ export const validateDate = (date: string) => {
       <div class="project-card">
         <h3>Project 1</h3>
         <p>Koneoppiminen web-sovelluksissa kurssille tekemäni lopputyö.</p>
-        <pre><code>const tf = require('@tensorflow/tfjs-node');
+        <pre><code class="language-typescript">const tf = require('@tensorflow/tfjs-node');
             const fs = require('fs');
             const path = require('path');
             // Funktio saa parametrina kansion osoitteen jossa kuvat ovat ja labelin joka kyseisille kuville annetaan
@@ -1008,7 +1009,7 @@ export const validateDate = (date: string) => {
         <p>Projekti toteutettu express.js ja mongoose kirjastoilla.</p>
         <p>Projektin github: <a href="https://github.com/KaitamakiKalle/car_restapi">https://github.com/KaitamakiKalle/car_restapi</a></p>
         <h4>Auto datan kontrolleri</h4>
-        <pre><code>const Car = require('../models/Car');
+        <pre><code class="language-typescript">const Car = require('../models/Car');
             const User = require('../models/User');
             
             // Kaikkien autojen haku
@@ -1249,7 +1250,7 @@ export const validateDate = (date: string) => {
             };</code></pre>
 
             <h4>Auton model</h4>
-            <pre><code>
+            <pre><code class="language-typescript">
                 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const MotorSchema = require('./Motor');
@@ -1298,7 +1299,7 @@ const model = mongoose.model('Car', Car);
 module.exports = model;
             </code></pre>
             <h4>Tokenin käsittely</h4>
-            <pre><code>
+            <pre><code class="language-typescript">
                 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
@@ -1353,9 +1354,9 @@ exports.verifyToken = (req, res, next) => {
         <h3>Covid-19 app</h3>
         <p>Frontend perusteet kurssille tekemäni pieni sovellus josta pystyi hakemaan (api jota käytetty ei ole enää toiminnassa) eri maiden korona tapausten määrän ja ostamaan erilaisia tuotteita tartunta riskin vähentämiseksi.</p>
        <p>Sovelluksen github: <a href="https://github.com/KaitamakiKalle/felopputyo">https://github.com/KaitamakiKalle/felopputyo</a></p>
-        <img src="./img/etusivu.png" alt="etusivu" class="feapp">
-       <img src="./img/kauppasivu.png" alt="kauppa" class="feapp">
-       <img src="./img/ostoskori.png" alt="ostoskori" class="feapp">
+        <img src="./etusivu.png" alt="etusivu" class="feapp">
+       <img src="./kauppasivu.png" alt="kauppa" class="feapp">
+       <img src="./ostoskori.png" alt="ostoskori" class="feapp">
           </div>
     </div>
     </div>
@@ -1363,7 +1364,7 @@ exports.verifyToken = (req, res, next) => {
 
  
   </div>
-  
+    <script src="./prism.js"></script>
 
 </body>
 
