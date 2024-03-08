@@ -1,158 +1,176 @@
+/* styles.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: sans-serif;
-    background-color: #396472;
- 
+    font-family:  sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
 }
-img{
-  display: block;
-  margin: auto;
-  width: 90%;
-  border-radius: 10px;
-  padding: 1rem;
-}
-.smallimg{
-  display: block;
-  width: 65%;
-  margin: auto;
-border-radius: 10px;
-}
+
 header {
-  text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
-h1{
-  margin-top: 0%;
-padding-top: 2rem;
-font-size: 4rem;
+
+nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 1rem;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* styles.css */
+
+/* Dark theme for code blocks */
+/* styles.css */
+
+
+
+/* styles.css */
+
+/* Dark theme for code blocks */
+code {
+    display: block;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    max-width: 90%;
+    margin: 0 auto; /* Centering the code block */
+    text-align: left; /* Align text to the left */
+}
+
+section pre {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    max-width: 90%;
+    margin: 0 auto; /* Centering the code block */
+}
+
+section pre code {
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
+}
+
+.project {
+    margin: 20px;
+  }
+  
+  .project h2 {
+    margin-bottom: 10px;
+  }
+  
+  .project p {
+    margin-bottom: 20px;
+  }
+  
+  .project .project-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 2rem;
+    background-color: rgb(200, 201, 200);
+  }
+  
+  .project .project-card pre {
+    margin: 0;
+    width: 90%; /* Adjust width as needed */
+    height: 50rem; /* Adjust height as needed */
+    overflow: auto;
+  }
+  
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+
+  .feapp{
+    max-width: 70%;
+  }
+.etusivu{
+  margin: auto;
+    
+    max-width: 70%;
+    margin-bottom: 10rem;
+}
+.mina {
+    max-width: 30%;
+    margin-bottom: 2rem;
+}
+.etusivu p{
+    max-width: 60%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+p{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 h2{
-  font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
-h3{
-  font-size: 1.5rem;
-}
-h1, h2, h3, h4 {
-  text-align: center;
-  padding-bottom: 1rem;
-  padding-top: 3rem;
-}
-p {
-  
-  max-width: 70%;
-  font-size: 1.2rem;
-  margin: auto;
-  text-align: justify;
-  padding: 0.5rem;
-  font-weight: bold;  
-    
-  
-}
-.container {
-background-color: white;
-  margin: auto;
-  width: 75%;
-  padding: 0%;
-  margin-top: 0%;
-  padding-bottom: 4rem;
-  /* text-align: center; */
-}
-
-
-pre {
-  width: fit-content;
-  height: fit-content;
-  border-radius: 10px;
-  
-}
-
-.testaus {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-.backend-grid {
-  display: grid;
-  grid-template-columns: auto auto;
-  column-gap: -4rem;
-  
-}
-.code {
-display: block;
-margin: auto;
-
-width: fit-content;
-padding-right: 2rem;
-
-}
-details > .code {
-
-
-  margin: 0;
-
-  padding: 0%;
-}
-summary {
-  color: red;
-}
-details{
-  max-width: 100%;
-  margin-left: 13rem;
-  font-size: 1.2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.code, pre, code {
-  max-width: 100%;
-}
-
-@media (max-width: 1600px){
-  .code, pre, code{
-
-    font-size: 0.9rem;
-  }
-  details{
-    margin-left: 12rem;
-  }
-  p, summary{
-    font-size: 1rem;
-  }
-}
-@media (max-width: 1400px){
-  .code, pre, code{
-
-    font-size: 0.9rem;
-  }
-  .backend-grid{
-    display: flex;
-    flex-direction: column;
-
-  }
-  details{
-    margin-left: 10rem;
-  }
-}
-@media (max-width: 1350px){
-  .code, pre, code{
-
-    font-size: 0.8rem;
-  }
-  details{
-    margin-left: 6rem;
-  }
-}
-@media (max-width: 1150px){
-  .code, pre, code{
-
-    font-size: 0.8rem;
-  }
-  details{
-    margin-left: 3rem;
-  }
-}
-@media (max-width: 1080px){
-  .code, pre, code{
-
-    font-size: 0.75rem;
-  }
-  details{
-    margin-left: 2rem;
-  }
+h4{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
